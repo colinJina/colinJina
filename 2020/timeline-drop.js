@@ -5,11 +5,12 @@
 var Engine = Matter.Engine,
   Render = Matter.Render,
   World = Matter.World,
-  Svg = Matter.Svg,
-  Bodies = Matter.Bodies;
+  Bodies = Matter.Bodies,
+  Events = Matter.Events;
 
 // create an engine
 var engine = Engine.create();
+engine.world.gravity.scale = 0.00065;
 
 // create a renderer
 var render = Render.create({
@@ -28,6 +29,23 @@ const left = Bodies.rectangle(-10, 200, 20, 400, { isStatic: true });
 const right = Bodies.rectangle(810, 200, 20, 400, { isStatic: true });
 World.add(engine.world, [ground, left, right]);
 
+// An invisible roof keeps the name clear and sends blocks down both sides.
+const roofOptions = {
+  isStatic: true,
+  friction: 0,
+  restitution: 0.05,
+  render: { visible: false },
+};
+const leftRoof = Bodies.rectangle(327, 101, 132, 10, {
+  ...roofOptions,
+  angle: -0.48,
+});
+const rightRoof = Bodies.rectangle(433, 101, 132, 10, {
+  ...roofOptions,
+  angle: 0.48,
+});
+World.add(engine.world, [leftRoof, rightRoof]);
+
 const colors = ["#40c463", "#216e39", "#30a14e", "#9be9a8", "#ebedf0"];
 const weeks = 52;
 const days = 7;
@@ -36,12 +54,18 @@ const yOffset = -80
 const xMargin = 4
 const yMargin = 4
 
-const font = []
 const letters = document.getElementById("orta")?.querySelectorAll("path")
-letters.forEach(path => {
-  font.push(Svg.pathToVertices(path, 30))
-})
-World.add(engine.world, Bodies.fromVertices(380, 120, font, { isStatic: true, render: { fillStyle: "fafafa"} }))
+const letterPaths = Array.from(letters).map(path => new Path2D(path.getAttribute("d")))
+
+// Render the SVG paths directly so the letters stay smooth and seamless.
+Events.on(render, "afterRender", () => {
+  const context = render.context;
+  context.save();
+  context.translate(286.23, 68.5);
+  context.fillStyle = "#1f1d2e";
+  letterPaths.forEach(path => context.fill(path));
+  context.restore();
+});
 
 // Timeline
 const bodies = [];
@@ -66,7 +90,7 @@ var boxB = Bodies.rectangle(450, 50, 10, 10, { render: { fillStyle: "#216e39" } 
 ground;
 
 // run the engine
-Engine.run(engine);
+var runner = Engine.run(engine);
 
 // run the renderer
 Render.run(render);
