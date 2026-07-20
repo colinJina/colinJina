@@ -6,9 +6,7 @@ var Engine = Matter.Engine,
   Render = Matter.Render,
   World = Matter.World,
   Svg = Matter.Svg,
-  Bodies = Matter.Bodies,
-  Body = Matter.Body,
-  Events = Matter.Events;
+  Bodies = Matter.Bodies;
 
 // create an engine
 var engine = Engine.create();
@@ -61,24 +59,6 @@ for (let i = 0; i < weeks; i++) {
   }
 }
 World.add(engine.world, bodies);
-
-// Gently clear blocks that have settled on the single-word name.
-Events.on(engine, "beforeUpdate", () => {
-  if (engine.timing.timestamp < 900) return;
-
-  bodies.forEach(body => {
-    const isNearName = body.position.y > 65 && body.position.y < 165;
-    const isStuck = Math.abs(body.velocity.y) < 0.65;
-
-    if (isNearName && isStuck) {
-      const direction = body.position.x < 380 ? -1 : 1;
-      Body.setVelocity(body, {
-        x: direction * Math.max(Math.abs(body.velocity.x), 1.25),
-        y: body.velocity.y,
-      });
-    }
-  });
-});
 
 // create two boxes and a ground
 var boxA = Bodies.rectangle(400, 200, 10, 10, { render: { fillStyle: "#40c463" } });
