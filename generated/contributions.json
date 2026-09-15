@@ -1,9 +1,9 @@
 {
   "username": "colinJina",
-  "startedAt": "2025-09-13T16:00:00Z",
-  "endedAt": "2026-09-15T15:59:59Z",
-  "fetchedAt": "2026-09-15T06:18:32.881Z",
-  "totalContributions": 71,
+  "startedAt": "2025-09-14T00:00:00Z",
+  "endedAt": "2026-09-15T23:59:59Z",
+  "fetchedAt": "2026-09-15T06:31:38.051Z",
+  "totalContributions": 73,
   "days": [
     {
       "date": "2025-09-14",
@@ -1032,13 +1032,13 @@
     },
     {
       "date": "2026-04-07",
-      "contributionCount": 0,
-      "contributionLevel": "NONE"
+      "contributionCount": 1,
+      "contributionLevel": "FIRST_QUARTILE"
     },
     {
       "date": "2026-04-08",
-      "contributionCount": 1,
-      "contributionLevel": "FIRST_QUARTILE"
+      "contributionCount": 0,
+      "contributionLevel": "NONE"
     },
     {
       "date": "2026-04-09",
@@ -1332,13 +1332,13 @@
     },
     {
       "date": "2026-06-06",
-      "contributionCount": 0,
-      "contributionLevel": "NONE"
+      "contributionCount": 1,
+      "contributionLevel": "FIRST_QUARTILE"
     },
     {
       "date": "2026-06-07",
-      "contributionCount": 1,
-      "contributionLevel": "FIRST_QUARTILE"
+      "contributionCount": 0,
+      "contributionLevel": "NONE"
     },
     {
       "date": "2026-06-08",
@@ -1367,8 +1367,8 @@
     },
     {
       "date": "2026-06-13",
-      "contributionCount": 0,
-      "contributionLevel": "NONE"
+      "contributionCount": 1,
+      "contributionLevel": "FIRST_QUARTILE"
     },
     {
       "date": "2026-06-14",
@@ -1377,8 +1377,8 @@
     },
     {
       "date": "2026-06-15",
-      "contributionCount": 6,
-      "contributionLevel": "FOURTH_QUARTILE"
+      "contributionCount": 5,
+      "contributionLevel": "THIRD_QUARTILE"
     },
     {
       "date": "2026-06-16",
@@ -1437,12 +1437,12 @@
     },
     {
       "date": "2026-06-27",
-      "contributionCount": 5,
-      "contributionLevel": "THIRD_QUARTILE"
+      "contributionCount": 6,
+      "contributionLevel": "FOURTH_QUARTILE"
     },
     {
       "date": "2026-06-28",
-      "contributionCount": 3,
+      "contributionCount": 2,
       "contributionLevel": "SECOND_QUARTILE"
     },
     {
@@ -1837,8 +1837,8 @@
     },
     {
       "date": "2026-09-15",
-      "contributionCount": 1,
-      "contributionLevel": "FIRST_QUARTILE"
+      "contributionCount": 3,
+      "contributionLevel": "SECOND_QUARTILE"
     }
   ]
 }
