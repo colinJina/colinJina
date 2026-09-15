@@ -1,0 +1,14 @@
+{
+  "name": "colin-contribution-pixels",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.18.0" },
+  "scripts": {
+    "fetch": "node src/fetch.ts",
+    "generate": "node src/generate.ts",
+    "check": "tsc --noEmit",
+    "test": "node --test test/*.test.ts"
+  },
+  "dependencies": { "@napi-rs/canvas": "^0.1.80" },
+  "devDependencies": { "@types/node": "^22.0.0", "typescript": "^5.9.0" }
+}

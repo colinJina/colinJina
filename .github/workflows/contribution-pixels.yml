@@ -1,0 +1,64 @@
+name: Update contribution pixels
+on:
+  schedule:
+    - cron: '17 0 * * *' # 08:17 Asia/Shanghai; GitHub may delay scheduled jobs.
+  workflow_dispatch:
+  push:
+    paths:
+      - 'src/**'
+      - 'assets/fonts/**'
+      - 'test/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'tsconfig.json'
+      - '.github/workflows/contribution-pixels.yml'
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'assets/fonts/**'
+      - 'test/**'
+      - 'package*.json'
+      - 'tsconfig.json'
+      - '.github/workflows/contribution-pixels.yml'
+permissions:
+  contents: read
+concurrency:
+  group: contribution-pixels-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run check && npm test
+      - name: Install renderer dependencies
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu-core
+      - name: Fetch current contributions
+        run: npm run fetch
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_USERNAME: colinJina
+      - name: Render and validate both themes
+        run: npm run generate
+      - uses: actions/upload-artifact@v4
+        with:
+          name: contribution-pixels
+          path: generated/
+      - name: Publish validated assets on the default branch
+        if: github.event_name != 'pull_request' && github.ref_name == github.event.repository.default_branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add generated
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore: refresh contribution pixels'
+            git push
+          fi
