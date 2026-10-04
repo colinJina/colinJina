@@ -1,45 +1,10 @@
 {
   "username": "colinJina",
   "startedAt": "2025-09-28T00:00:00Z",
-  "endedAt": "2026-10-03T23:59:59Z",
-  "fetchedAt": "2026-10-03T05:26:44.129Z",
+  "endedAt": "2026-10-04T23:59:59Z",
+  "fetchedAt": "2026-10-04T06:02:35.793Z",
   "totalContributions": 78,
   "days": [
-    {
-      "date": "2025-09-28",
-      "contributionCount": 0,
-      "contributionLevel": "NONE"
-    },
-    {
-      "date": "2025-09-29",
-      "contributionCount": 0,
-      "contributionLevel": "NONE"
-    },
-    {
-      "date": "2025-09-30",
-      "contributionCount": 0,
-      "contributionLevel": "NONE"
-    },
-    {
-      "date": "2025-10-01",
-      "contributionCount": 0,
-      "contributionLevel": "NONE"
-    },
-    {
-      "date": "2025-10-02",
-      "contributionCount": 0,
-      "contributionLevel": "NONE"
-    },
-    {
-      "date": "2025-10-03",
-      "contributionCount": 0,
-      "contributionLevel": "NONE"
-    },
-    {
-      "date": "2025-10-04",
-      "contributionCount": 0,
-      "contributionLevel": "NONE"
-    },
     {
       "date": "2025-10-05",
       "contributionCount": 0,
@@ -1859,6 +1824,11 @@
       "date": "2026-10-03",
       "contributionCount": 1,
       "contributionLevel": "FIRST_QUARTILE"
+    },
+    {
+      "date": "2026-10-04",
+      "contributionCount": 0,
+      "contributionLevel": "NONE"
     }
   ]
 }
