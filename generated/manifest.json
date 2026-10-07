@@ -1,13 +1,13 @@
 {
   "username": "colinJina",
-  "contributions": 80,
-  "particles": 80,
+  "contributions": 103,
+  "particles": 103,
   "durationSeconds": 10,
   "fps": 30,
   "scale": 1,
   "sizes": {
-    "light": 169914,
-    "dark": 169680
+    "light": 181326,
+    "dark": 181158
   },
-  "fetchedAt": "2026-10-06T06:31:19.469Z"
+  "fetchedAt": "2026-10-07T06:09:52.512Z"
 }
