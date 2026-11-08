@@ -1,45 +1,10 @@
 {
   "username": "colinJina",
   "startedAt": "2025-11-02T00:00:00Z",
-  "endedAt": "2026-11-07T23:59:59Z",
-  "fetchedAt": "2026-11-07T06:10:34.375Z",
+  "endedAt": "2026-11-08T23:59:59Z",
+  "fetchedAt": "2026-11-08T06:16:40.898Z",
   "totalContributions": 104,
   "days": [
-    {
-      "date": "2025-11-02",
-      "contributionCount": 0,
-      "contributionLevel": "NONE"
-    },
-    {
-      "date": "2025-11-03",
-      "contributionCount": 0,
-      "contributionLevel": "NONE"
-    },
-    {
-      "date": "2025-11-04",
-      "contributionCount": 0,
-      "contributionLevel": "NONE"
-    },
-    {
-      "date": "2025-11-05",
-      "contributionCount": 0,
-      "contributionLevel": "NONE"
-    },
-    {
-      "date": "2025-11-06",
-      "contributionCount": 0,
-      "contributionLevel": "NONE"
-    },
-    {
-      "date": "2025-11-07",
-      "contributionCount": 0,
-      "contributionLevel": "NONE"
-    },
-    {
-      "date": "2025-11-08",
-      "contributionCount": 0,
-      "contributionLevel": "NONE"
-    },
     {
       "date": "2025-11-09",
       "contributionCount": 0,
@@ -1857,6 +1822,11 @@
     },
     {
       "date": "2026-11-07",
+      "contributionCount": 0,
+      "contributionLevel": "NONE"
+    },
+    {
+      "date": "2026-11-08",
       "contributionCount": 0,
       "contributionLevel": "NONE"
     }
